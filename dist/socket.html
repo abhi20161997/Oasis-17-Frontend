@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Events | Oasis'17</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="dist/">
+    <!-- <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/characters.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="css/lightbox.css"> -->
+  </head>
+  <body class="ltr">
+  <div id="events_wrapper">
+    <header>
+      <div class="logo"></div>
+      <div id="Arrows">
+        <div class="change prev"></div>
+        <div class="change next"></div>
+      </div>
+    </header>
+    <section>
+      <div id="Main">
+        <div id="Polys">
+          <div class="change prev"></div>
+          <div id="Box" class="Johnny">
+            <div id="a1"></div>
+            <div id="a2"></div>
+            <div id="a3"></div>
+            <div id="a4"></div>
+            <div id="a5"></div>
+            <div id="a6"></div>
+            <div id="a7"></div>
+            <div id="a8"></div>
+            <div id="a9"></div>
+            <div id="a10"></div>
+            <div id="a11"></div>
+            <div id="a12"></div>
+            <div id="a13"></div>
+            <div id="a14"></div>
+            <div id="a15"></div>
+            <div id="a16"></div>
+            <div id="a17"></div>
+            <div id="a18"></div>
+            <div id="a19"></div>
+            <div id="a20"></div>
+            <div id="a21"></div>
+            <div id="a22"></div>
+            <div id="a23"></div>
+            <div id="a24"></div>
+          </div>
+          <div class="change next"></div>
+        </div>
+        <div id="EventName">
+          <span>Random Name</span>
+        </div>
+        <div id="TagLine">
+          <span>VENDETTA MADARCHOD</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li id="ViewEvent">EVENTS</li>
+          <li>LINK #2</li>
+        </ul>
+        <div>RANDOM TEXT</div>
+      </nav>
+    </section>
+    <div class="parent lightbox">
+        <div class="backrotate">
+        </div>
+        <div class='crosscont'>
+            <div class="cross">
+                <a class="crosslink" href="#">
+                    <p class="crossbar" id="anticlk"></p>
+                    <p class="crossbar" id="clk"></p>
+                </a>
+            </div>
+        </div>
+        <div class="evtcont">
+            <ul class="evtname">
+                <li id="a" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="b" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="c" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="d" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="e" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p id="">brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="f" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="f" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+                <li id="f" class="evt">
+                    <h1 class=" name dust">EVENT NAME</h1>
+                    <p>brief</p>
+                    <p id="bottom"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="info_wrapper">
+        <div class="backrotate">
+        </div>
+        <div class="info">
+            <div class='crosscont'>
+                <div class="cross" id="cross_info">
+                    <a class="crosslink" href="#">
+                        <p class="crossbar" id="anticlk"></p>
+                        <p class="crossbar" id="clk"></p>
+                    </a>
+                </div>
+            </div>
+            <div class="evtcont_info">
+                <ul class="evtname">
+                    <li id="f" class="evt">
+                        <h1 class=" name dust">EVENT NAME</h1>
+                        <p>brief</p>
+                        <p id="bottom"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <p>There is no Internet connection
+                    <br> Try:
+                    <br> Checking the network cables, modem and router
+                    <br> Reconnecting to Wi-Fi
+                    <br> DNS_PROBE_FINISHED_NO_INTERNET
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+    var exampleSocket = new WebSocket("wss://bits-oasis.org/2017maintest", "echo-protocol");
+    exampleSocket.onopen = function (event) {
+      console.log("WS Opened Successfully");
+      var data = [
+        {
+          type: "static",
+          url: "css/events.css",
+          ext: "css"
+        },
+        {
+          type: "static",
+          url: "css/characters.css",
+          ext: "css"
+        },
+        {
+          type: "static",
+          url: "css/transitions.css",
+          ext: "css"
+        },
+        {
+          type: "static",
+          url: "css/lightbox.css",
+          ext: "css"
+        },
+        {
+          type: "static",
+          url: "css/fonts.css",
+          ext: "css"
+        },
+        {
+          type: "static",
+          url: "js/characters.js",
+          ext: "js"
+        },
+        {
+          type: "static",
+          url: "js/events.js",
+          ext: "js"
+        },
+        {
+          type: "static",
+          url: "img/Oasis-Logo.png",
+          ext: "img",
+          mime: "png"
+        }
+      ];
+
+      for (var i in data) {
+          data[i].last = retrive_last(data[i].url);
+          console.log(data[i] .last);
+          exampleSocket.send(JSON.stringify(data[i]));
+      }
+    };
+    exampleSocket.onmessage = function(event) {
+      var res = JSON.parse(event.data);
+      console.log(res);
+      if(res.load){
+        if(res.ext == "css") {
+          inject(res.data, "style");
+        }
+        else if(res.ext == "js") {
+         inject(res.data, "script");
+        }
+        save(res);
+      }else{
+        inject(window.localStorage.getItem(res.url+"_data"), window.localStorage.getItem(res.url+"_tag"));
+      }
+    }
+
+    function save(res){
+      window.localStorage.setItem(res.url, "true");
+      window.localStorage.setItem(res.url + "_data",res.data);
+      window.localStorage.setItem(res.url + "_last",res.last);
+      window.localStorage.setItem(res.url + "_ext",res.ext);
+      if(res.ext =="css"){
+        window.localStorage.setItem(res.url + "_tag","style");
+      }else if(res.ext =="js"){
+        window.localStorage.setItem(res.url + "_tag","script");
+      }
+
+    }
+    function retrive_last(url){
+      return window.localStorage.getItem(url + "_last");
+    }
+
+    function inject(data, tag){
+      var ele = document.createElement(tag);
+      document.head.appendChild(ele);
+      ele.innerHTML = data;
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $('#ViewEvent').click(function() {
+            $('.lightbox').slideToggle();
+        });
+        $('.cross').click(function() {
+            $('.lightbox').slideToggle();
+        });
+        $('#cross_info').click(function() {
+            $('.lightbox').fadeIn();
+            $('.info_wrapper').fadeOut();
+        });
+        $('.evt').click(function() {
+            $('.lightbox').fadeOut();
+            $('.info_wrapper').fadeIn();
+        });
+    </script>
+    <!-- <script src="../js/characters.js"></script> -->
+    <!-- <script src="../js/events.js"></script> -->
+  </body>
+</html>

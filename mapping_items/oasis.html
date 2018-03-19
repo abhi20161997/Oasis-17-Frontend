@@ -1,0 +1,121 @@
+<html>
+
+<style media="screen">
+  /*@keyframes lineani {
+    0% {
+      stroke-dashoffset: 200px;
+      stroke-width: 0.2;
+    }
+    100% {
+      stroke-dashoffset: 0px;
+      stroke-width: 0.5;
+    }
+  }
+  @keyframes lineanichu {
+    0% {
+      stroke-dashoffset: 200px;
+      stroke-width: 0.2;
+    }
+    100% {
+      stroke-dashoffset: -29px;
+      stroke-width: 0.5;
+    }
+  }*/
+  /*svg * {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: 200px;
+    animation: 10s lineani cubic-bezier(.7,.3,0,1) both;
+  }*/
+</style>
+
+<!-- <link rel="stylesheet" href="../dist/css/oasisline.css"> -->
+
+<body>
+
+
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 300 300">
+  <polygon points="128.34 241.894 101.5 161.631 215.761 177.095 128.34 241.894" style="fill:#fdd7bb"/>
+  <polygon points="128.34 241.894 197.74 241.894 163.04 267.967 128.34 241.894" style="fill:#fdd7bb"/>
+  <polygon points="197.74 241.894 215.761 177.095 128.34 241.894 197.74 241.894" style="fill:#fdd7bb"/>
+  <polygon points="123.866 230.903 72.232 227.324 115.579 201.771 123.866 230.903" style="fill:#060808"/>
+  <polygon points="65.514 115.509 3.989 125.595 108.26 185.448 65.514 115.509" style="fill:#060808"/>
+  <polygon points="164.126 230.903 168.472 240.68 162.017 244.962 164.126 230.903" style="fill:#c1664d"/>
+  <polygon points="127.765 207.617 127.824 207.878 131.355 223.515 157.001 225.727 127.765 207.617" style="fill:#fff"/>
+  <polygon points="150.109 221.457 146.457 224.033 139.864 215.111 150.109 221.457" style="fill:#4e8dca"/>
+  <polygon points="197.644 207.617 197.585 207.878 194.103 223.298 168.408 225.727 197.644 207.617" style="fill:#fff"/>
+  <polygon points="115.487 193.399 106.918 213.965 125.119 231.99 115.487 193.399" style="fill:#ea997e"/>
+  <polygon points="175.3 221.457 178.952 224.033 185.545 215.111 175.3 221.457" style="fill:#4e8dca"/>
+  <polygon points="270.065 112.638 174.429 132.301 201.816 193.399 270.065 112.638" style="fill:#060808"/>
+  <polygon points="207.95 156.595 140.737 32.033 176.89 211.605 207.95 156.595" style="fill:#060808"/>
+  <polygon points="222.09 147.652 77.595 44.448 166.54 188.39 222.09 147.652" style="fill:#060808"/>
+  <polygon points="33.569 84.509 168.728 171.063 110.789 94.855 33.569 84.509" style="fill:#060808"/>
+  <polygon points="148.232 186.502 137.784 216.672 123.104 141.846 148.232 186.502" style="fill:#060808"/>
+  <polygon points="148.232 186.502 168.728 171.063 123.104 141.846 148.232 186.502" style="fill:#060808"/>
+  <polygon points="122.684 205.277 125.464 199.526 158.486 226.939 122.684 205.277" style="fill:#231f20"/>
+  <polygon points="167.659 226.494 202.724 205.277 199.944 199.526 167.659 226.494" style="fill:#231f20"/>
+  <polygon points="210.691 217.521 296.011 168.852 204.29 159.258 210.691 217.521" style="fill:#060808"/>
+  <polygon points="65.514 115.509 131.936 140.395 125.119 213.233 65.514 115.509" style="fill:#060808"/>
+  <polygon points="120.091 211.847 18.68 188.598 110.702 168.852 120.091 211.847" style="fill:#060808"/>
+  <polygon points="208.589 198.935 216.584 212.672 201.404 228.793 208.589 198.935" style="fill:#ea997e"/>
+  <polygon points="216.584 212.672 216.584 203.381 208.589 198.935 216.584 212.672" style="fill:#ea997e"/>
+  </svg>  <div id="text">
+
+    </div>
+
+    <script>
+    window.i = -1;
+    function printPoly(poly){
+      i = window.i;
+      var points = poly.getAttribute('points').split(' ');
+      var str = "";
+      for (var j = 0; j < points.length - 2; j+=2) {
+        str += ("" + (parseFloat(points[j]) / 3) + "% " + (parseFloat(points[j+1]) / 3) + "%, " );
+      }
+      str.substr(0,points.length - 2);
+      text.innerHTML += `#a${parseInt(i)+1}<br>`;
+      text.innerHTML += `-webkit-clip-path: polygon(${str})<br>`;
+      text.innerHTML += `clip-path: polygon(${str})<br>`;
+      text.innerHTML += `background: ${ poly.getAttribute('fill') }<br>`;
+    }
+        var polygons = document.querySelectorAll('svg *')
+        // var polys = [];
+        for (var k = 0; k < polygons.length; k++) {
+          var poly = polygons[k];
+          poly.setAttribute('fill',poly.getAttribute('style').split(':')[1]);
+          poly.style.fill = "#ffffff";
+          poly.style.stroke = "#000000";
+          poly.style.strokeWidth = 0.2;
+        }
+        // polys.sort(function(a,b){
+        //   var recta = a.getBoundingClientRect();
+        //   var rectb = b.getBoundingClientRect();
+        //   return (100*Math.pow(recta.left,2) + Math.pow(recta.top,2) - 100*Math.pow(rectb.left,2) - Math.pow(rectb.top,2))
+        // });
+        // for (var i = 0; i < polys.length; i++) {
+        //   var poly = polygons[i];
+        //   var points = poly.getAttribute('points').split(' ');
+        //   var str = "";
+        //   for (var j = 0; j < points.length - 2; j+=2) {
+        //     str += ("" + (parseFloat(points[j]) / 3) + "% " + (parseFloat(points[j+1]) / 3) + "%, " );
+        //   }
+        //   str.substr(0,points.length - 2);
+        //   text.innerHTML += `#a${parseInt(i)+1}<br>`;
+        //   text.innerHTML += `-webkit-clip-path: polygon(${str})<br>`;
+        //   text.innerHTML += `clip-path: polygon(${str})<br>`;
+        //   text.innerHTML += `background: ${ poly.getAttribute('style').split(' ')[1] }<br>`;
+        // }
+    document.body.onclick = function(e){
+      if(e.target.tagName=="polygon" || e.target.tagName=="polyline") {
+        window.i++;
+        printPoly(e.target);
+        if(e.target.style.fill == "#000000") e.target.style.fill = "#ffffff";
+        else e.target.style.fill = "#000000";
+        console.log(window.i);
+      }
+    }
+    </script>
+</body>
+
+</html>
